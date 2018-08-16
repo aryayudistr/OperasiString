@@ -13,6 +13,12 @@ public class ConvertVocal2Angka {
     public static void main(String[] args){
     
         String identitas = "Arya Yudistira / X RPL 3 / 08";
+        
+        tampilJudul(identitas);
+        String kalimat = tampilInput();
+        String convert = vocal2Angka(kalimat);
+        tampilPerKata(kalimat, convert);
+        tampilHasil(convert);
 
         
     }
@@ -26,6 +32,15 @@ public class ConvertVocal2Angka {
             
             return kalimat;
 }
+    private static String vocal2Angka(String kalimat){
+            char [][] arConvert = {{'a','4'},{'i','1'},{'u','2'},{'e','3'},{'o','o'}};
+            
+            kalimat = kalimat.toLowerCase();
+            for(int i=0; i<arConvert.length;i++)
+                kalimat = kalimat.replace(arConvert[i][0], arConvert[i][1]);
+            
+            return kalimat;
+    }        
 }
         
      
